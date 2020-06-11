@@ -5,7 +5,7 @@
 
     <div class="students">
         @foreach ($students as $student)
-            <a href="" class="student">
+    <a href="{{ route('student.show', ['id' => $student['id']])}}" class="student">
                 <header>
                 <img src="{{$student['img']}}" alt="{{$student['nome']}}">
                     <div class="info">
