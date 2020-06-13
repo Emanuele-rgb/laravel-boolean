@@ -3,9 +3,10 @@
 @section('main-content')
     <h1>I nostri ex studenti</h1>
 
+   
     <div class="students">
         @foreach ($students as $student)
-    <a href="{{ route('student.show', ['id' => $student['id']])}}" class="student">
+    <a href="{{ route('student.show', ['slug' => $student['slug']])}}" class="student">
                 <header>
                 <img src="{{$student['img']}}" alt="{{$student['nome']}}">
                     <div class="info">

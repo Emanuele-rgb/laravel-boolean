@@ -23,9 +23,9 @@ class StudentController extends Controller
         return view ('students.index', compact('students'));
     }
 
-    public function show($id){
+    public function show($slug){
 
-        $student = $this->searchStudent($id, $this->students);
+        $student = $this->searchStudent($slug, $this->students);
         if(! $student){
             abort('404');
         }
@@ -33,9 +33,9 @@ class StudentController extends Controller
         return view ('students.show', compact('student'));
     }
 
-    private function searchStudent($id, $array) {
+    private function searchStudent($slug, $array) {
         foreach ($array as $student) {
-            if($student['id'] == $id){
+            if($student['slug'] == $slug){
                 return $student;
             }
 
